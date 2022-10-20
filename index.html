@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>Bloom Gallery Flowers</title>
+              
+
+            <link rel="shortcut icon" href="img/logo.jpeg" />
+          <meta charset="UTF-8">
+          <meta name="description" content="Bloom Gallery Flowers is a florist based in San Francisco, California, specializing in flower delivery and wedding floral decor.">
+          <meta name="keywords" content="florist, flower delivery, wedding florist, wedding decor, wedding bouquet">
+          <meta name="author" content="Anastasiya Yurinok">
+           
+           <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+           <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
+        </head>
+        <body>
+        <style>
+            *
+            {
+                margin: 0px;
+                padding: 0px;
+                box-sizing: border-box;
+                font-family: sans-serif;
+            }
+            header
+            {
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                height: 100px;
+                display: flex;
+                justify-content: space-between;
+                padding: 10px 100px;
+                /*border: 1px solid black;*/
+                align-items: center;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0px 0px 5px grey;
+            }
+            header .logo
+            {
+                height: 80px;
+            }
+            header .logo img
+            {
+                height: 100%;
+            }
+            header nav ul
+            {
+                line-height: none;
+            }
+            header nav ul li
+            {
+                display: inline-block;
+            }
+            header nav ul li a 
+            {
+                text-decoration: none;
+                font-size: 1.3rem;
+                color: grey;
+                display: block;
+                padding: 20px 10px;
+                text-transform: uppercase;
+                transform: 0.5s;
+            }
+            header nav ul li a:hover
+            {
+                color: black;
+            }
+            header #btn_toggle 
+            {
+                font-size: 2rem;
+                color: #3A3A3A;
+                display: none;
+            }
+            .hero-section
+            {
+                height:60vh;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin-top:100px;
+                gap: 10px;
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),url("e55f01192cae478780459c6aadc75a25.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                display: flex;
+                color: white;
+                letter-spacing: 1px;
+                text-align: center;
+
+            }
+            .heading
+            {
+                font-size: 2rem;
+                text-transform: capitalize;
+
+            }
+            .img-p
+            {
+                max-width:468px;
+                width:100%;
+            }
+            .title
+            {
+                font-size: 1.3rem;
+            }
+            .imp-content
+            {
+                padding: 100px;
+                display: flex;
+            }
+            .text-content{
+                padding: 30px 100px;
+            }
+            .left_panel, .right_panel
+            {
+                width: 50%;
+                padding:0px 50px;
+            }
+            .left_panel
+            {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            .left_panel ul{
+              font-size: 1.5rem;
+            }
+            .right_panel
+            {
+                padding: 10px 30px;
+                border-left: 1px solid grey;
+            }
+            footer
+            {
+                padding: 100px;
+                background-color: #3A3A3A;
+                width: 100%;
+                color: white;
+            }
+            footer .row
+            {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            footer ul {margin-top: 20px;}
+            footer ul li{
+                list-style: none;
+            }
+            footer ul li a 
+            {
+                text-decoration: none;
+                color: grey;
+                padding: 5px 0px;
+                display: block;
+            }
+            footer ul li a:hover
+            {
+                color: black;
+            }
+
+            @media (max-width:768px)
+            {
+                header
+                {
+                    padding: 10px 50px;
+                }
+                .imp-content
+                {
+                    flex-direction: column;
+                    padding: 100px 50px;
+                    gap: 50px;
+                }
+
+                .left_panel, .right_panel
+                {
+                    width: 100%;
+                    /*padding: */
+                }
+                .right_panel
+                {
+                    padding:0px;
+                    border-left: none;
+                }
+                footer
+                {
+                    padding: 100px 50px;
+                }
+                footer .row
+                {
+                    flex-direction: column;
+                    gap: 30px;
+                }
+                #menu
+                {
+                    /*border: 1px solid red;*/
+                    position: absolute;
+                    top: 100px;
+                    left: 0px;
+                    width: 100%;
+                    background-color: white;
+                    /*height: 80px;*/
+                    overflow: hidden;
+                }
+                #menu ul li
+                {
+                    display: block;
+
+                }
+                #menu ul li a 
+                {
+                    text-align: center;
+                }
+                .active
+                {
+                    height: 0px;
+                }
+            }
+
+            @media (max-width:568px)
+            {
+                header #btn_toggle
+                {
+                    display: block;
+                }
+                .hero-section
+                {
+                    height: 60vh;
+                    padding: 10px;
+                }
+                .heading
+                {
+                    font-size: 1.8rem;
+                    text-transform: capitalize;
+
+                }
+                .title
+                {
+                    font-size: 1rem;
+                }
+                .text-content {
+                  padding: 30px 3   0px;
+                   }
+                }
+
+                /* ========================== map section ========================== */
+                .map-section
+                {
+                    height:100vh;
+                    padding:100px;
+                }
+                .map-section h2
+                {
+                    text-align:center;
+                    margin-bottom:50px;
+                }
+                .map-section .map-div
+                {
+                    height:50vh;
+                }
+                @media(max-width:768px)
+                {
+                    .map-section
+                    {
+                        padding:50px 30px;
+                        height: auto;
+                    }
+                }
+            
+            
+            .icon-box {text-align: center;width: 50%;
+            margin-top: 3rem;}
+            .left_panel ul li {
+                 
+                 text-decoration: none  !important;
+                 padding-left: 5px;
+                 padding-right: 5px;
+                 padding-top: 10px;
+            } 
+
+            .left_panel ul li a{color: grey;}
+            a:-webkit-any-link {
+                text-decoration: none;
+            } 
+
+        </style>
+        <header>
+            <div class="logo">
+               <img alt="keyword" class="logo" src="511350fea242f4a7e41440f865b78067.jpg" id="logo" data-test-source="keyword1" title="Bloom Gallery Flowers" width="80px" height="50px">
+            </div>
+            <nav id="menu" class="active">
+                <ul>
+                    <li id="menu0"><a class="top-menu" href=""></a></li>    
+                </ul>
+            </nav>
+            <div id="btn_toggle" onclick="Menu()">
+                <span>&#9776;</span>
+            </div>
+        </header>
+        <div class="hero-section">
+            <h1 class="heading">Bloom Gallery Flowers</h1>
+           <p>ADRESS:3150 18th St #205, San Francisco, California, 94110, USA</p>
+           <p>PHONE:(415) 545-8559</p>
+        </div>
+        <div class="keywords">
+          <div class="col-12 text-content">
+                            <h2 id="keyword1">Florist</h2>
+                            <div id="k1_des"><p>&nbsp;</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://i.postimg.cc/QN0j8FZq/florist.jpg" alt="Florist" class="img-p" /></p>
+<p>&nbsp;</p>
+<h2 style="text-align: center;">&nbsp;</h2>
+<h2 style="text-align: center;">How to Become a Florist ?</h2>
+<p>&nbsp;</p>
+<p>A florist is a person who sells flowers. They also make bouquets for special occasions. Florists are skilled in communication and design. In addition, they must have good inventory management skills. However, it's not easy to become a florist. You need to be trained. Fortunately, several resources can help you become a florist.</p>
+<p>&nbsp;</p>
+<h4>Job duties of a florist</h4>
+<p>&nbsp;</p>
+<p>A florist's job involves creating and designing floral arrangements for customers. This creative work requires extensive knowledge of flowers, color schemes, and the best ways to arrange them. They are often self-employed and may run their own business or work in a retail outlet. Their salaries vary widely depending on the size of their shop, their education, and where they live.</p>
+<p>&nbsp;</p>
+<p>A florist's job includes arranging natural and artificial flowers, fulfilling special orders, and creating and delivering flower bouquets. They work with various flowers and foliage and order supplies from wholesalers. They also educate customers about proper flower care and advise on flowers to buy.</p>
+<p>&nbsp;</p>
+<p>Many florists work indoors in workrooms or sales areas but also spend much time traveling to markets and delivering arrangements to customers. They may also work longer hours and on weekends, especially during peak seasons. This work requires a high level of physical fitness and stamina. Florists also spend much time standing and carrying heavy and fragile displays.</p>
+<p>&nbsp;</p>
+<h4>Training required</h4>
+<p>&nbsp;</p>
+<p>To be a florist, you will need to obtain training. A high school diploma or GED will be sufficient, but some floral designers also complete a post-secondary program in floral design. Most of these programs offer certificates or diplomas, including internships in greenhouses. In addition, most programs offer business courses that will help you understand how the floral industry works and how to run a successful business.</p>
+<p>&nbsp;</p>
+<p>Training for florists should include an introduction to color theory and an understanding of historical and contemporary floral styles. This training will help you understand different types of flowers, their growth, and how to design beautiful arrangements for customers. In addition, it will teach you the skills to manage a floral business, including marketing and staff management.</p>
+<p>&nbsp;</p>
+<p>As a florist, you will need to be creative and artistic. It would help to experiment with different floral designs to find your unique style. Depending on the occasion, you can go for an understated or extravagant look. As a florist, you can also use your creative skills to develop a portfolio of your best work to sell your services to clients.</p>
+<p>&nbsp;</p>
+<h4>Communication skills</h4>
+<p>&nbsp;</p>
+<p>As a florist, good communication skills can help you gain more customers. You must be able to approach walk-in customers and professionally respond to website visitors. You must also provide services that customers will be satisfied with. Moreover, you should be able to provide a guarantee of security to your customers. This is important because customers want to be sure that the florist will keep their information confidential and never share it with anyone else.</p>
+<p>&nbsp;</p>
+<p>Florists also need to have good time management skills. They must be able to divide their time effectively and finish orders on time. This is important because they must finish orders quickly to avoid disappointing their customers. Florists must manage their time well to avoid delaying their customers and disappointing them.</p>
+<p>&nbsp;</p>
+<p>Besides these skills, florists need to have excellent organizational skills. They must be able to prioritize tasks according to their importance. They also need to have good communication skills with other florists to make customers happy with the floral arrangements they create. They also need to be detail-oriented because they use their hands to arrange flowers and bouquets.</p>
+<p>&nbsp;</p>
+<h4>Inventory management</h4>
+<p>&nbsp;</p>
+<p>A floral inventory management system is an excellent way to ensure that your stock levels are always accurate. A sound system will make it easy to determine what is in stock and what isn't and ensure you're never short on stock. Many floral companies use SMARTSystem to keep track of their inventory and streamline their business workflow. The Innovative system also allows for easy barcoding of inventory items. This means that all departments can work together and know how much they have in stock. This can help them avoid stocking items that aren't in demand during busy times.</p>
+<p>&nbsp;</p>
+<p>In addition to managing stock levels, inventory management for florists also includes tracking incoming orders. Advancements in software can automatically take incoming orders and other important information into account to ensure the business runs smoothly.</p>
+<p>&nbsp;</p></div>
+                        </div>
+                        <div class="col-12 text-content">
+                            <h2 id="keyword1"></h2>
+                            <div id="k1_des"></div>
+                        </div>
+                        <div class="col-12 text-content">
+                            <h2 id="keyword1"></h2>
+                            <div id="k1_des"></div>
+                        </div>
+        </div>
+        <footer>
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="title" id="bname">Bloom Gallery Flowers</h2>
+                    <ul>
+                        <li style="color:grey">(415) 545-8559</li>
+                        <li style="color:grey">bloomgalleryflowers@gmail.com</li>
+                        <li style="color:grey">3150 18th St #205, San Francisco, California, 94110, USA</li>
+                    </ul>
+                </div>
+                 
+                
+                 
+            </div>   
+        </footer>
+
+        <script>
+        var menu = document.getElementById("menu");
+        function menu()
+        {
+            alert("hellow")
+        }
+        function Menu() {
+           var element = document.getElementById("menu");
+           element.classList.toggle("active");
+        }
+
+        </script>
+        </body>
+        </html>
